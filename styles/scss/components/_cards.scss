@@ -1,0 +1,104 @@
+@use "../abstract/colors";
+@use "../abstract/mixins";
+
+/* our works media card */
+.media {
+  &__card {
+    position: relative;
+    padding-bottom: 50px;
+    width: 50%;
+    &:not(:last-child) {
+      margin-right: 30px;
+      @include mixins.media-md {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+    }
+    &_details {
+      display: flex;
+      justify-content: space-between;
+    }
+    &_img {
+      inline-size: 100%;
+      border-radius: 25px;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+    @include mixins.media-md {
+      padding-bottom: 0;
+      width: 100%;
+      &_details {
+        position: absolute;
+        width: 100%;
+        padding: 0 30px;
+        bottom: 30px;
+      }
+      &_title,
+      &_sub-title {
+        color: white;
+      }
+      &_img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* our services content */
+
+.our-services__content {
+  display: flex;
+  &:not(:last-child) {
+    margin-bottom: 70px;
+  }
+  &_info {
+    max-width: 600px;
+  }
+  &_img {
+    object-fit: cover;
+    border-radius: 25px;
+    aspect-ratio: 16/9;
+    max-width: 400px;
+    margin-right: 50px;
+  }
+  &_title {
+    font-weight: 700;
+    line-height: 29px;
+    color: #ffffff;
+    margin-bottom: 30px;
+  }
+  &_text {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  @include mixins.media-lg {
+    &_info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    &_title {
+      margin-bottom: 15px;
+    }
+    &_img {
+      max-width: 300px;
+      margin-right: 30px;
+      max-height: 250px;
+    }
+  }
+  @include mixins.media-md {
+    flex-direction: column;
+    &_img {
+      max-width: 100%;
+      margin-right: 0;
+    }
+    &_info {
+      margin-top: 20px;
+      align-items: center;
+    }
+    &_text {
+      text-align: center;
+    }
+  }
+}

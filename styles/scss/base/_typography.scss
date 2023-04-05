@@ -1,0 +1,151 @@
+@use "../abstract/colors";
+@use "../abstract/mixins";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+body {
+  font-family: "Montserrat", sans-serif;
+}
+h1 {
+  font-weight: 700;
+}
+a {
+  color: black;
+}
+a,
+p {
+  font-weight: 400;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: colors.$secondary;
+  margin: 0.37em 0;
+}
+.bold-text {
+  font-style: normal;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: colors.$secondary;
+  margin: 0.37em 0;
+}
+
+.small-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: colors.$secondary;
+  margin: 0.37em 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.header__title,
+.big-content__info_title,
+.small-content__info_title,
+.our-works__info_title,
+.media__card_title,
+.our-services__title,
+.about-us__title,
+.team__title,
+.team__content_title,
+.footer__content_title,
+.our-services__content_title {
+  font-size: 32px;
+}
+
+@include mixins.media-xl {
+  .header__title,
+  .big-content__info_title,
+  .small-content__info_title,
+  .our-works__info_title,
+  .media__card_title,
+  .our-services__title,
+  .about-us__title,
+  .team__title,
+  .team__content_title,
+  .footer__content_title,
+  .our-services__content_title {
+    font-size: 28px;
+  }
+}
+
+@include mixins.media-lg {
+  .header__title,
+  .big-content__info_title,
+  .small-content__info_title,
+  .our-works__info_title,
+  .media__card_title,
+  .our-services__title,
+  .about-us__title,
+  .team__info_title,
+  .team__title,
+  .team__content_title,
+  .footer__content_title,
+  .our-services__content_title {
+    font-size: 25px;
+  }
+  .about-us__text,
+  .text {
+    font-size: 14px;
+  }
+}
+@include mixins.media-md {
+  .header__title,
+  .big-content__info_title,
+  .small-content__info_title,
+  .our-works__info_title,
+  .media__card_title,
+  .our-services__title,
+  .about-us__title,
+  .team__title,
+  .team__content_title,
+  .footer__content_title,
+  .our-services__content_title,
+  .team__info_title,
+  .our-services__content_title {
+    font-size: 22px;
+  }
+  .about-us__text,
+  .text,
+  .media__card_sub-title {
+    font-size: 12px;
+  }
+  .small-title,
+  .team__desc {
+    font-size: 14px;
+  }
+}
+@include mixins.media-sm {
+  .header__title,
+  .big-content__info_title,
+  .small-content__info_title,
+  .our-works__info_title,
+  .media__card_title,
+  .our-services__title,
+  .about-us__title,
+  .team__title,
+  .team__content_title,
+  .footer__content_title,
+  .our-services__content_title,
+  .team__info_title,
+  .our-services__content_title {
+    font-size: 16px;
+  }
+  .about-us__text,
+  .text,
+  .media__card_sub-title {
+    font-size: 12px;
+  }
+  .small-title,
+  .team__desc,
+  .bold-text {
+    font-size: 12px;
+  }
+}

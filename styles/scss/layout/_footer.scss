@@ -1,0 +1,55 @@
+@use "../abstract/colors";
+@use "../abstract/mixins";
+
+/*footer*/
+
+.footer {
+  box-shadow: 0 0 0 100vmax colors.$black;
+  clip-path: inset(0 -100vmax);
+  width: 100%;
+  margin-top: 80px;
+  padding-top: 80px;
+  background-color: colors.$black;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &_title {
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+}
+.socials {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  &__link {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+  &__icon {
+    width: 30px;
+    height: 30px;
+  }
+  @include mixins.media-lg {
+    &__icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+.copyright {
+  margin-top: 30px;
+  padding: 32px 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  color: colors.$secondary;
+  text-align: center;
+  border-top: 1px solid colors.$secondary;
+  @include mixins.media-lg {
+    font-size: 14px;
+  }
+}

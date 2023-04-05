@@ -1,0 +1,37 @@
+@use "colors";
+@mixin media-xl {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+@mixin media-md {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin media-sm {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+@mixin buttons(
+  $padding: 7px 25px,
+  $color: colors.$primary,
+  $bg: colors.$primary-light
+) {
+  padding: $padding;
+  color: $color;
+  border: none;
+  background-color: $bg;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 26px;
+  cursor: pointer;
+  text-transform: capitalize;
+}

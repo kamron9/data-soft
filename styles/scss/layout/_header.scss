@@ -1,0 +1,39 @@
+@use "../abstract/colors";
+@use "../abstract/mixins";
+@use "../components/hamburger-menu";
+
+.header {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  padding: 40px 0;
+  align-items: center;
+  &__title {
+    margin-right: 150px;
+  }
+  .nav {
+    &__item:not(:last-child) {
+      margin-right: 50px;
+    }
+    &__item {
+      color: colors.$secondary;
+      font-size: 18px;
+    }
+  }
+  -webkit-touch-callout: none; //IOS safari
+  -webkit-user-select: none; //safari
+  -khtml-user-select: none; //Konqueror HTML
+  -moz-user-select: none; //firefox old version
+  -ms-user-select: none; // internet explorer/ Edge
+  user-select: none; /*Non-prefixed version, supported by chrome,firefox and opera*/
+  @include mixins.media-xl {
+    &__title {
+      margin-right: 70px;
+    }
+  }
+  @include mixins.media-lg {
+    .nav {
+      display: none;
+    }
+  }
+}

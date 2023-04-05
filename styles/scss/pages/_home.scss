@@ -1,0 +1,376 @@
+@use "../abstract/colors";
+@use "../abstract/mixins";
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container {
+  padding: 0 50px;
+  max-width: 1400px;
+  @include mixins.media-md {
+    padding: 0 30px;
+  }
+}
+::-webkit-scrollbar {
+  width: 1rem;
+  height: 1rem;
+}
+::-webkit-scrollbar-track {
+  background-color: #f4f4f4;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #b8b8b8;
+  border-radius: 100vw;
+}
+/*actual news*/
+
+.actual-news {
+  width: 100%;
+  display: flex;
+  height: 600px;
+  margin-top: 50px;
+  @include mixins.media-lg {
+    flex-direction: column;
+    height: auto;
+  }
+}
+.big-content {
+  width: 70%;
+  position: relative;
+  height: 100%;
+  &__img {
+    width: 100%;
+    height: 100%;
+    min-height: 230px;
+    object-fit: cover;
+    border-radius: 25px;
+  }
+  &__info {
+    position: absolute;
+    width: 100%;
+    bottom: 70px;
+    padding: 0 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_title {
+      color: #fff;
+    }
+  }
+  @include mixins.media-xl {
+    width: 100%;
+    &__info {
+      flex-direction: column;
+      align-items: flex-start;
+      &_title {
+        margin: 30px 0;
+      }
+    }
+    @include mixins.media-md {
+      &__info_title {
+        margin: 15px 0;
+      }
+    }
+  }
+  @include mixins.media-lg {
+    width: 100%;
+    margin-bottom: 30px;
+    &__info {
+      padding: 0 40px;
+    }
+  }
+  @include mixins.media-sm {
+    &__info {
+      padding: 0 20px;
+    }
+  }
+}
+
+.small-content {
+  width: 30%;
+  max-width: 30%;
+  padding-left: 30px;
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include mixins.media-lg {
+    display: flex;
+    &__info {
+      margin-left: 30px;
+      height: fit-content;
+      flex-direction: column;
+    }
+  }
+  @include mixins.media-lg {
+    &__img {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.icon-right-arrow {
+  width: 40px;
+}
+/*our works*/
+
+.our-works {
+  margin-top: 80px;
+}
+.our-works__info {
+  display: flex;
+  align-items: center;
+  &-start {
+    width: 50%;
+    margin-right: 30px;
+  }
+  &-end {
+    width: 50%;
+    &_text {
+      margin-bottom: 20px;
+    }
+  }
+  @include mixins.media-md {
+    text-align: center;
+    flex-direction: column;
+    &-start {
+      width: 100%;
+      margin-right: 0;
+      text-align: center;
+    }
+    &-end {
+      width: 100%;
+    }
+  }
+}
+
+.media {
+  width: 100%;
+  margin: 100px 0;
+  display: flex;
+
+  @include mixins.media-md {
+    margin: 50px 0;
+    flex-direction: column;
+  }
+}
+
+/*our services*/
+.our-services {
+  padding: 70px 100px;
+  background-color: colors.$black;
+  border-radius: 25px;
+  width: 100%;
+  height: fit-content;
+  &__title {
+    margin: 50px 0;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  @include mixins.media-xl {
+    padding: 70px 70px;
+  }
+  @include mixins.media-xl {
+    padding: 50px 30px;
+  }
+}
+
+/*about us*/
+.about-us {
+  margin-top: 30px;
+  width: 100%;
+  &__content {
+    width: 50%;
+    height: fit-content;
+    &_wrap {
+      margin-bottom: 30px;
+    }
+  }
+  &__wrap {
+    margin-left: 100px;
+    width: 50%;
+  }
+  &__img {
+    border-radius: 25px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  &__text {
+    line-height: 150%;
+    margin-bottom: 20px;
+    color: colors.$secondary;
+  }
+  @include mixins.media-lg {
+    &__wrap {
+      margin-left: 0;
+      width: 100%;
+    }
+    &__img {
+      width: 100%;
+      aspect-ratio: 16/9;
+    }
+    &__content {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      &_wrap {
+        width: 50%;
+        margin-right: 30px;
+      }
+    }
+  }
+  @include mixins.media-md {
+    &__content {
+      flex-direction: column;
+      &_wrap {
+        text-align: center;
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  }
+}
+.inner {
+  display: flex;
+  @include mixins.media-lg {
+    flex-direction: column-reverse;
+  }
+}
+.intro {
+  display: flex;
+  justify-content: space-around;
+  padding: 70px 20px;
+  border: 1px solid colors.$secondary;
+  border-radius: 25px;
+  &__row {
+    text-align: center;
+  }
+  &__years,
+  &__professionals {
+    margin-bottom: 30px;
+  }
+  @include mixins.media-lg {
+    padding: 30px 10px;
+    width: 50%;
+    &__amount {
+      font-size: 25px;
+    }
+  }
+  @include mixins.media-md {
+    width: 100%;
+  }
+}
+
+/*team*/
+.team {
+  margin-top: 80px;
+  &__box {
+    display: flex;
+    margin-top: 60px;
+  }
+  &__desc {
+    line-height: 150%;
+    color: #6b6b6b;
+    padding: 90px 70px;
+  }
+  &-wrap {
+    border: 1px solid colors.$secondary;
+    border-radius: 25px;
+    margin-right: 60px;
+    width: 70%;
+    height: fit-content;
+  }
+
+  &__info {
+    border-radius: 0 0 25px 25px;
+    padding: 70px;
+    background-color: colors.$primary-light;
+    display: flex;
+    align-items: center;
+    &_avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+  }
+  // right content
+  &__content {
+    width: 30%;
+    background-color: colors.$primary;
+    border-radius: 25px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    &_img {
+      width: 150px;
+      height: 150px;
+      border-radius: 15px;
+    }
+    &_title {
+      font-weight: 700;
+      margin: 20px 0;
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+  @include mixins.media-xl {
+    &-wrap {
+      width: 50%;
+    }
+
+    &__info {
+      padding: 40px;
+    }
+    &__content {
+      padding: 40px;
+      width: 50%;
+    }
+    &__box {
+      display: flex;
+    }
+  }
+  @include mixins.media-lg {
+    &__box {
+      display: flex;
+      flex-direction: column;
+    }
+    &-wrap {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    &__info {
+      padding: 40px;
+    }
+    &__content {
+      padding: 40px;
+      width: 100%;
+      &_img {
+        width: 150px;
+        object-fit: cover;
+        height: 150px;
+      }
+    }
+  }
+  @include mixins.media-md {
+    &__info,
+    &__desc {
+      padding: 50px 20px;
+    }
+  }
+}

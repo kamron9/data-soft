@@ -1,0 +1,56 @@
+@use "../abstract/colors";
+@use "../abstract/mixins";
+
+/*our header btn*/
+.header__btn {
+  display: flex;
+  @include mixins.buttons;
+  margin-left: auto;
+  @include mixins.media-lg {
+    display: none;
+  }
+}
+
+/* big content btn*/
+.big-content__info_btn {
+  @include mixins.buttons($padding: 15px 35px);
+  @include mixins.media-md {
+    padding: 10px 20px;
+  }
+  @include mixins.media-sm {
+    @include mixins.buttons($padding: 5px 15px);
+    font-size: 12px;
+  }
+}
+/*our works btn*/
+
+.our-works__info-btn {
+  @include mixins.buttons;
+}
+/*our services btn*/
+.our-services__content_btn {
+  @include mixins.buttons($bg: colors.$secondary, $color: #fff);
+  width: fit-content;
+}
+/*about us btn*/
+.about-us__btn {
+  @include mixins.buttons;
+  margin: 30px 0;
+}
+/*team btn*/
+.team__content_btn {
+  @include mixins.buttons($bg: #fff, $color: colors.$black);
+  margin-top: 20px;
+}
+/*footer btn*/
+.footer__content_btn {
+  @include mixins.buttons(
+    $padding: 10px 30px,
+    $bg: colors.$primary,
+    $color: #ffffff
+  );
+  margin-top: 20px;
+  @include mixins.media-lg {
+    @include mixins.buttons($padding: 10px 20px);
+  }
+}
